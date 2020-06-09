@@ -23,13 +23,12 @@ self.addEventListener('fetch', e => {
         let resClone = res.clone();
         caches.open(CACHE_NAME)
           .then(function (cache) {
-            console.log('Opened cache');
-            cache.put(e.request, resClone);
+            if (e.request.url.indexof('https') !== -1)
+              cache.put(e.request, resClone);
           });
         return res;
       })
       .catch((err) => {
-        console.log(e.request.url);
         return caches.match(e.request).then((res) => res);
       })
 
