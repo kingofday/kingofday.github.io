@@ -2,7 +2,8 @@ var CACHE_NAME = 'pharma-pwa';
 var urlsToCache = [
   '/logo.png',
 ];
-const apiUrl = 'https://localhost:44328/';
+//const apiUrl = 'https://localhost:44328/';
+const apiUrl = 'https://pharma.hillavas.com/api/'
 // Install a service worker
 self.addEventListener('install', event => {
   // Perform install steps
