@@ -1,10 +1,11 @@
 var CACHE_NAME = 'pharma-pwa';
 var urlsToCache = [
   './',
-  '/logo.png',
+  './logo.png',
   "./manifest.json",
   { url: '/index.html', revision: '383676' }
 ];
+const baseUrl = 'http://localhost:3000';
 const apiUrl = 'https://localhost:44328/';
 // const apiUrl = 'https://pharma.hillavas.com/api/'
 
@@ -22,7 +23,7 @@ self.addEventListener('install', e => {
 
 // Cache and return requests
 self.addEventListener('fetch', e => {
-  console.log(`url: ${e.request.url}`);
+ 
   // console.log('[ServiceWorker] Fetch', e.request.url);
   // if (event.request.mode === 'navigate') {
   //   e.respondWith(caches.match('/index.html'));
@@ -40,15 +41,16 @@ self.addEventListener('fetch', e => {
         })
         .catch(function (err) { })
     );
-  } else {
+  } else if(e.request.url.indexOf(baseUrl) === 0) {
     //for shell
     e.respondWith(
       caches.open(CACHE_NAME).then(function (cache) {
-        return caches.match(e.request.url).then(function (response) {
-          if (response) return response
-          return fetch(e.request).then(response => {
-            cache.put(e.request.url, response.clone());
-            return response;
+        return caches.match(e.request.url).then(function (cRep) {
+          if (cRep) return cRep;
+          console.log(request.url);
+          return fetch(e.request).then(fRep => {
+            cache.put(e.request.url, fRep.clone());
+            return fRep;
           });
           // return response || fetch(e.request);
         });
@@ -57,47 +59,6 @@ self.addEventListener('fetch', e => {
     );
   }
 });
-
-
-//================================================1
-// e.respondWith(
-//   fetch(e.request)
-//     .then(function (res) {
-//       let resClone = res.clone();
-//       caches.open(CACHE_NAME)
-//         .then(function (cache) {
-//           if (e.request.url.indexof('https') !== -1)
-//             cache.put(e.request, resClone);
-//         });
-//       return res;
-//     })
-//     .catch((err) => {
-//       console.log(e.request.url);
-//       return caches.match(e.request).then((res) => res);
-//     })
-
-//================================================2
-//   function () {
-//   console.log()
-//   if (event.request.url.indexOf(apiUrl)) {
-//     if (response) {
-//       return response;
-//     }
-//     return fetch(event.request);
-//   }
-// }
-
-// caches.match(event.request)
-//   .then(function(response) {
-//     // Cache hit - return response
-//     if (response) {
-//       return response;
-//     }
-//     return fetch(event.request);
-//   }
-// )
-//);
-//});
 
 // Update a service worker
 self.addEventListener('activate', event => {
