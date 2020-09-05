@@ -1,14 +1,17 @@
 var CACHE_NAME = 'pharma-pwa';
 var urlsToCache = [
-  '/',
+  './',
   '/logo.png',
+  "./manifest.json",
+  { url: '/index.html', revision: '383676' }
 ];
 const apiUrl = 'https://localhost:44328/';
 // const apiUrl = 'https://pharma.hillavas.com/api/'
+
 // Install a service worker
-self.addEventListener('install', event => {
+self.addEventListener('install', e => {
   // Perform install steps
-  event.waitUntil(
+  e.waitUntil(
     caches.open(CACHE_NAME)
       .then(function (cache) {
         console.log('Opened cache');
@@ -19,7 +22,8 @@ self.addEventListener('install', event => {
 
 // Cache and return requests
 self.addEventListener('fetch', e => {
-
+  alert(e.request.url);
+console.log(`url: ${e.request.url}`);
   // console.log('[ServiceWorker] Fetch', e.request.url);
   // if (event.request.mode === 'navigate') {
   //   e.respondWith(caches.match('/index.html'));
@@ -41,19 +45,19 @@ self.addEventListener('fetch', e => {
     //for shell
     e.respondWith(
       caches.open(CACHE_NAME).then(function (cache) {
-        return caches.match(e.request).then(function (response) {
+        return caches.match(e.request.url).then(function (response) {
           if (response) return response
-          fetch(event.request).then(response => {
-            cache.put(event.request.url, response.clone());
+          return fetch(e.request).then(response => {
+            cache.put(e.request.url, response.clone());
             return response;
-          })
+          });
           // return response || fetch(e.request);
         });
 
       })
     );
   }
-
+});
 
 
   //================================================1
@@ -94,7 +98,7 @@ self.addEventListener('fetch', e => {
   //   }
   // )
   //);
-});
+//});
 
 // Update a service worker
 self.addEventListener('activate', event => {
