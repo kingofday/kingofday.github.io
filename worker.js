@@ -1,5 +1,6 @@
 var CACHE_NAME = 'pharma-pwa';
 var urlsToCache = [
+  '/',
   '/logo.png',
 ];
 const apiUrl = 'https://localhost:44328/';
@@ -10,9 +11,8 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(function (cache) {
-        // console.log('Opened cache');
-        // return cache.addAll(urlsToCache);
-        return cache;
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
       })
   );
 });
@@ -40,13 +40,16 @@ self.addEventListener('fetch', e => {
   } else {
     //for shell
     e.respondWith(
-      caches.match(e.request).then(function (response) {
-        if (response) return response
-        fetch(event.request).then(response => {
-          cache.put(event.request, response.clone());
-          return response;
-        })
-        // return response || fetch(e.request);
+      caches.open(CACHE_NAME).then(function (cache) {
+        return caches.match(e.request).then(function (response) {
+          if (response) return response
+          fetch(event.request).then(response => {
+            cache.put(event.request, response.clone());
+            return response;
+          })
+          // return response || fetch(e.request);
+        });
+
       })
     );
   }
