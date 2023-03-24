@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.981581b2.css",
-    "main.js": "/static/js/main.0764c8b1.js",
+    "main.css": "/static/css/main.a7a055e8.css",
+    "main.js": "/static/js/main.b5aa8557.js",
     "static/js/787.a71561b8.chunk.js": "/static/js/787.a71561b8.chunk.js",
     "static/media/Vazir-Light-FD.eot": "/static/media/Vazir-Light-FD.c0afca25df4848c36a03.eot",
     "static/media/Vazir-Light-FD.ttf": "/static/media/Vazir-Light-FD.d2b0af34e7b8a7b0d383.ttf",
@@ -33,12 +33,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.981581b2.css.map": "/static/css/main.981581b2.css.map",
-    "main.0764c8b1.js.map": "/static/js/main.0764c8b1.js.map",
+    "main.a7a055e8.css.map": "/static/css/main.a7a055e8.css.map",
+    "main.b5aa8557.js.map": "/static/js/main.b5aa8557.js.map",
     "787.a71561b8.chunk.js.map": "/static/js/787.a71561b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.981581b2.css",
-    "static/js/main.0764c8b1.js"
+    "static/css/main.a7a055e8.css",
+    "static/js/main.b5aa8557.js"
   ]
 }
