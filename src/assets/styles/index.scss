@@ -21,24 +21,22 @@ body {
     }
 
     header {
-        display: flex !important;
-        align-items: center;
-        justify-content: space-between;
         background-color: var(--blue);
-        color: var(--bg);
-        height: 60px;
 
-        .hx {
-            font-size: 1rem;
-            display: inline-flex;
-            gap: 0.25rem;
+        >div {
+            display: flex !important;
             align-items: center;
-        }
-
-        .custom-icon {
+            justify-content: space-between;
             color: var(--bg);
+            height: 60px;
+
+
+            .custom-icon {
+                color: var(--bg);
+            }
         }
     }
+
 
     main {
         display: flex !important;
@@ -49,11 +47,14 @@ body {
 
     footer {
         background-color: var(--pics);
-        color: var(--bg);
-        text-align: center;
-        padding: 0.625rem 0;
-        //padding: var(--mainPadding);
 
+        //padding: var(--mainPadding);
+        >div {
+            color: var(--bg);
+            text-align: center;
+            padding: 0.625rem 0;
+
+        }
     }
 }
 

@@ -6,6 +6,7 @@ import Carousel from "./Carousel";
 const Home = () => {
     const { t } = useTranslation();
     return <>
+        <h1 className="hx">{t("شهروز بذرافشان")}</h1>
         <Carousel />
         <section>
             <ul className="contacts">
@@ -39,7 +40,7 @@ const Home = () => {
                         role={"button"}
                         href="https://www.linkedin.com/in/bazrafshan/"
                     >
-                        <CustomIcon name={"IoLogoLinkedin"} />
+                        <CustomIcon name={"IoLogoStackoverflow"} />
                         StackOverflow
                     </a>
                 </li>
