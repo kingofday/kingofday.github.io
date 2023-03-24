@@ -1,5 +1,6 @@
 @import "./fonts";
 @import "./constants";
+@import "./home";
 
 * {
     box-sizing: border-box;
@@ -16,19 +17,22 @@ body {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+        gap: 2rem;
     }
 
     header {
-        display: flex;
+        display: flex !important;
         align-items: center;
         justify-content: space-between;
-        padding: var(--mainPadding);
         background-color: var(--blue);
         color: var(--bg);
         height: 60px;
 
-        h1 {
+        .hx {
             font-size: 1rem;
+            display: inline-flex;
+            gap: 0.25rem;
+            align-items: center;
         }
 
         .custom-icon {
@@ -37,18 +41,19 @@ body {
     }
 
     main {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
+        gap: 2rem;
         flex: 1;
-        padding: var(--mainPadding);
     }
 
     footer {
         background-color: var(--pics);
         color: var(--bg);
         text-align: center;
-        padding: var(--mainPadding);
-        
+        padding: 0.625rem 0;
+        //padding: var(--mainPadding);
+
     }
 }
 
