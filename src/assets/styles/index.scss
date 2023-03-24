@@ -1,0 +1,57 @@
+@import "./fonts";
+@import "./constants";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Vazir;
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+
+    #root {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--mainPadding);
+        background-color: var(--blue);
+        color: var(--bg);
+        height: 60px;
+
+        h1 {
+            font-size: 1rem;
+        }
+
+        .custom-icon {
+            color: var(--bg);
+        }
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: var(--mainPadding);
+    }
+
+    footer {
+        background-color: var(--pics);
+        color: var(--bg);
+        text-align: center;
+        padding: var(--mainPadding);
+        
+    }
+}
+
+.page {
+    padding: 20px;
+}
