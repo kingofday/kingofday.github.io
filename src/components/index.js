@@ -10,13 +10,9 @@ import { useState } from "react";
 
 const App = () => {
     const [anchorElNav, setAnchorElNav] = useState(null);
-    const [anchorElUser, setAnchorElUser] = useState(null);
     const nav = useNavigate();
     const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
+        setAnchorElNav(anchorElNav?null:event.currentTarget);
     };
 
     const handleCloseNavMenu = (path) => {
@@ -99,7 +95,7 @@ const App = () => {
                     variant="h5"
                     noWrap
                     component="a"
-                    href=""
+                    href="/"
                     sx={{
                         display: { xs: 'flex', md: 'none' },
                         flexGrow: 1,
