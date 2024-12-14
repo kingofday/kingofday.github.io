@@ -8,7 +8,9 @@ import {
 import App from "components"
 import Home from "components/home"
 import About from "components/about"
+import Test from "components/test"
 import Projects from "components/projects"
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +27,10 @@ const router = createBrowserRouter([
     {
       path: "about",
       element: <About />,
+    },
+    {
+      path: "test",
+      element: <Test />,
     }
     ]
   },

@@ -9,6 +9,7 @@ const Slide = ({
         <img
             src={img}
             alt={name}
+            height={200}
         />
         <div className="info">
             <a href={link}>{name}</a>

@@ -7,16 +7,18 @@ import "slick-carousel/slick/slick-theme.css";
 import { AppBar, Avatar, Box, Container, createTheme, CssBaseline, Typography, IconButton, Menu, MenuItem, ThemeProvider, Toolbar, Tooltip, Button } from "@mui/material";
 import routes from "config/routes";
 import { useState } from "react";
+import useStore from "states/store";
 
 const App = () => {
     const [anchorElNav, setAnchorElNav] = useState(null);
+    const { theme, changeTheme } = useStore();
     const nav = useNavigate();
     const handleOpenNavMenu = (event) => {
-        setAnchorElNav(anchorElNav?null:event.currentTarget);
+        setAnchorElNav(anchorElNav ? null : event.currentTarget);
     };
 
     const handleCloseNavMenu = (path) => {
-        console.log("path",path)
+        console.log("path", path)
         if (path) {
             nav(path)
         }
@@ -24,13 +26,13 @@ const App = () => {
     };
 
     const { t } = useTranslation();
-    const theme = createTheme({
+    const muiTheme = createTheme({
         typography: {
             fontFamily: 'Vazir, Arial',
         }
     });
     const pages = [{ path: routes.projects, label: t("پروژه ها") }, { path: routes.about, label: t("درباره من") }];
-    return <ThemeProvider theme={theme}>
+    return <ThemeProvider theme={muiTheme}>
         <CssBaseline />
         <AppBar position="static">
             <Container>
@@ -112,7 +114,7 @@ const App = () => {
                     {pages.map((page) => (
                         <Button
                             key={page.path}
-                            onClick={()=> handleCloseNavMenu(page.path)}
+                            onClick={() => handleCloseNavMenu(page.path)}
                             sx={{ my: 2, color: 'white', display: 'block' }}
                         >
                             {page.label}
@@ -120,7 +122,10 @@ const App = () => {
                     ))}
                 </Box>
 
-                <Box sx={{ flexGrow: 0 }}>
+                <Box sx={{ flexGrow: 0, display: "flex", gap: 4 }}>
+                    <IconButton sx={{ p: 0 }} onClick={() => changeTheme()}>
+                        <CustomIcon size={20} name={theme === "light" ? "IoMoonOutline" : "IoSunnyOutline"} />
+                    </IconButton>
                     <IconButton sx={{ p: 0 }}>
                         <a href="tel:+9809334188184" className="btn-call" role={"button"} title={t("تماس")}>
                             <CustomIcon size={20} name={"IoCallOutline"} />
