@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://kingofday.github.io/",
+  "description": "Professional portfolio of Shahrooz Bazrafshan - Senior Full-Stack Developer",
+  "keywords": [
+    "shahrooz-bazrafshan",
+    "full-stack-developer",
+    "react-developer",
+    "nodejs-developer",
+    "dotnet-developer",
+    "portfolio"
+  ],
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
