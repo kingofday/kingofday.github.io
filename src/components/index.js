@@ -20,7 +20,7 @@ import {
 import routes from "config/routes";
 import { useState } from "react";
 import useStore from "states/store";
-import { changeLanguage } from "i18next";
+import i18next, { changeLanguage } from "i18next";
 import i18n from "config/i18n";
 import { useTranslation } from "react-i18next";
 
@@ -54,7 +54,10 @@ const App = () => {
   const { t } = useTranslation();
   const muiTheme = createTheme({
     typography: {
-      fontFamily: "Vazir, Arial",
+      fontFamily:
+        i18next.language === "fa"
+          ? "Vazir, Arial"
+          : "Roboto, Arial, sans-serif",
     },
   });
   const pages = [

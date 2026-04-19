@@ -3,61 +3,59 @@
 @import "./home";
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
+  min-height: 100vh;
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+
+  #root {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    font-family: Vazir;
-    font-size: 13px;
-    padding: 0;
-    margin: 0;
+    gap: 2rem;
+  }
 
-    #root {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        gap: 2rem;
+  header {
+    background-color: var(--blue);
+
+    > div {
+      display: flex !important;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--bg);
+      height: 60px;
+
+      .custom-icon {
+        color: var(--bg);
+      }
     }
+  }
 
-    header {
-        background-color: var(--blue);
+  main {
+    display: flex !important;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+  }
 
-        >div {
-            display: flex !important;
-            align-items: center;
-            justify-content: space-between;
-            color: var(--bg);
-            height: 60px;
+  footer {
+    background-color: var(--pics);
 
-
-            .custom-icon {
-                color: var(--bg);
-            }
-        }
+    //padding: var(--mainPadding);
+    > div {
+      color: var(--bg);
+      text-align: center;
+      padding: 0.625rem 0;
     }
-
-
-    main {
-        display: flex !important;
-        flex-direction: column;
-        gap: 2rem;
-        flex: 1;
-    }
-
-    footer {
-        background-color: var(--pics);
-
-        //padding: var(--mainPadding);
-        >div {
-            color: var(--bg);
-            text-align: center;
-            padding: 0.625rem 0;
-
-        }
-    }
+  }
 }
-
+html[dir="rtl"] {
+  font-family: Vazir;
+}
 .page {
-    padding: 20px;
+  padding: 20px;
 }
