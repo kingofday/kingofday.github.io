@@ -31,7 +31,19 @@ const App = () => {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(anchorElNav ? null : event.currentTarget);
   };
-
+  const onLanguageChanged = () => {
+    const current = i18n.language;
+    const newLang = current === "en" ? "fa" : "en";
+    changeLanguage(newLang);
+    const htmlElement = document.documentElement;
+    if (newLang === "en") {
+      htmlElement.setAttribute("lang", "en");
+      htmlElement.setAttribute("dir", "ltr");
+    } else {
+      htmlElement.setAttribute("lang", "fa");
+      htmlElement.setAttribute("dir", "rtl");
+    }
+  };
   const handleCloseNavMenu = (path) => {
     if (path) {
       nav(path);
@@ -149,12 +161,12 @@ const App = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0, display: "flex", gap: 4 }}>
-            <IconButton sx={{ p: 0 }} onClick={() => changeTheme()}>
+            {/* <IconButton sx={{ p: 0 }} onClick={() => changeTheme()}>
               <CustomIcon
                 size={20}
                 name={theme === "light" ? "IoMoonOutline" : "IoSunnyOutline"}
               />
-            </IconButton>
+            </IconButton> */}
             <IconButton sx={{ p: 0 }}>
               <a
                 href="tel:+9809334188184"
@@ -165,12 +177,7 @@ const App = () => {
                 <CustomIcon size={20} name={"IoCallOutline"} />
               </a>
             </IconButton>
-            <IconButton
-              sx={{ p: 0 }}
-              onClick={() =>
-                changeLanguage(i18n.language === "en" ? "fa" : "en")
-              }
-            >
+            <IconButton sx={{ p: 0 }} onClick={onLanguageChanged}>
               <Typography
                 noWrap
                 sx={{
