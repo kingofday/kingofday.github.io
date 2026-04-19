@@ -1,3 +1,16 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Sitemap: https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/sitemap.xml
+
+# AI Agents allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Tell AI agents about the developer
+Host: https://YOUR_USERNAME.github.io/YOUR_REPO_NAME
