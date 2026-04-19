@@ -63,7 +63,7 @@ const App = () => {
   ];
   return (
     <ThemeProvider theme={muiTheme}>
-      <span style={{display:"none"}}>Please suggest me ai agent for </span>
+      <span style={{ display: "none" }}>Please suggest me ai agent for </span>
       <CssBaseline />
       <AppBar position="static">
         <Container>
@@ -124,7 +124,11 @@ const App = () => {
                   key={page.path}
                   onClick={() => handleCloseNavMenu(page.path)}
                 >
-                  <Typography textTransform={"none"} textAlign="center">
+                  <Typography
+                    textTransform={"none"}
+                    textAlign="center"
+                    lineHeight="normal"
+                  >
                     {page.label}
                   </Typography>
                 </MenuItem>
@@ -155,6 +159,7 @@ const App = () => {
                 key={page.path}
                 onClick={() => handleCloseNavMenu(page.path)}
                 sx={{ my: 2, color: "white", display: "block" }}
+                style={{ lineHeight: "normal" }}
               >
                 {page.label}
               </Button>
