@@ -61,7 +61,7 @@ const App = () => {
     },
   });
   const pages = [
-    { path: routes.projects, label: t("پروژه ها") },
+    // { path: routes.projects, label: t("پروژه ها") },
     { path: routes.about, label: t("درباره من") },
   ];
   return (
@@ -190,7 +190,7 @@ const App = () => {
               <Typography
                 noWrap
                 sx={{
-                  display: { xs: "none", md: "flex" },
+                  display: "flex",
                   color: "white",
                   textDecoration: "none",
                 }}
