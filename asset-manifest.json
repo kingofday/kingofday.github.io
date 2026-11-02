@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8b73d93c.css",
-    "main.js": "/static/js/main.ce92ed8f.js",
+    "main.js": "/static/js/main.d6c09a5b.js",
     "static/js/787.a71561b8.chunk.js": "/static/js/787.a71561b8.chunk.js",
     "static/media/workano-1.png": "/static/media/workano-1.bfc986a3b0bb6fc47a0e.png",
     "static/media/spira-1.png": "/static/media/spira-1.4a29e6944adc04ce5414.png",
@@ -24,6 +24,7 @@
     "static/media/Vazir-Medium-FD.woff": "/static/media/Vazir-Medium-FD.0777e018bf86b21d270e.woff",
     "static/media/Vazir-Thin-FD.woff": "/static/media/Vazir-Thin-FD.c6514ec4f40f9a47ff4d.woff",
     "static/media/Vazir-Regular-FD.woff": "/static/media/Vazir-Regular-FD.eb4e6a9f39bf1514fe19.woff",
+    "static/media/my-agah-1.jpeg": "/static/media/my-agah-1.1a03c6d7d86838f69ae6.jpeg",
     "static/media/Vazir-Light-FD.woff2": "/static/media/Vazir-Light-FD.d26f9cd2ca8200df0c7d.woff2",
     "static/media/Vazir-Black-FD.woff2": "/static/media/Vazir-Black-FD.7b8008cc94abad76acbc.woff2",
     "static/media/Vazir-Bold-FD.woff2": "/static/media/Vazir-Bold-FD.f3feb1c6d4f9b8a24be0.woff2",
@@ -36,11 +37,11 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "main.8b73d93c.css.map": "/static/css/main.8b73d93c.css.map",
-    "main.ce92ed8f.js.map": "/static/js/main.ce92ed8f.js.map",
+    "main.d6c09a5b.js.map": "/static/js/main.d6c09a5b.js.map",
     "787.a71561b8.chunk.js.map": "/static/js/787.a71561b8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8b73d93c.css",
-    "static/js/main.ce92ed8f.js"
+    "static/js/main.d6c09a5b.js"
   ]
 }
