@@ -27,6 +27,14 @@ const Home = () => {
             <a
               className="social"
               role={"button"}
+              href="https://github.com/kingofday/"
+            >
+              <CustomIcon name={"IoLogoGithub"} />
+              Githup
+            </a>
+            <a
+              className="social"
+              role={"button"}
               href="mailto:shahrooz.bazrafshan@gmail.com"
             >
               <CustomIcon name={"IoMailOutline"} />

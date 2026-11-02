@@ -1,7 +1,14 @@
 import researchImage1 from "assets/files/projects/research-1.png";
 import spiraImage1 from "assets/files/projects/spira-1.png";
 import workanoImage1 from "assets/files/projects/workano-1.png";
+import myAgahImage1 from "assets/files/projects/my-agah-1.jpeg";
 const projects = [
+    {
+        "name": "آگاه من",
+        "tags": ["سرمایه گذاری در آگاه", "پنل", "شرکت آسا"],
+        "link": "https://my.agah.com/",
+        "img": myAgahImage1
+    },
     {
         "name": "ریسرچ",
         "tags": ["تصمیم یار بورس", "تیمی", "شرکت آسا"],
